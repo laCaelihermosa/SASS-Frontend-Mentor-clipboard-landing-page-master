@@ -1,0 +1,78 @@
+@use 'vars' as v;
+@use 'mixins';
+
+.f {
+    background-color: v.$BgGrayish-Blue;      
+    padding: 60px 0;      
+    position: static;
+    @include mixins.flex-elements-desktop-view(100%); 
+    @include mixins.desktop-view(100%, 220px, unset);
+    @include mixins.margin-padding(0 auto 0, 70px);
+    @include mixins.backdrop;    
+        
+    &__logo {
+        display: block;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 50px;
+        @include mixins.hover;
+        @include mixins.top(-40px);
+    }
+    
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 155px;       
+        margin: 0 auto;
+        @include mixins.top(-50px);
+        @include mixins.hover;
+    }
+
+    &__icon {
+        font-size: 1.75em;
+        color: v.$Dark-Grayish-Blue;
+        cursor: pointer;
+    }
+
+    &__icon:hover {
+        color: v.$Strong-Cyan;
+    }
+    
+    &__left-container {
+        @include mixins.flex-elements-desktop-view(680px);               
+        @include mixins.footer-set;
+    }
+    
+    &__container {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        align-items: center;  
+        text-align: center;    
+        @include mixins.flex-elements-desktop-view(900px);
+        @include mixins.hover;
+    }
+}
+
+ul,
+li {
+    list-style-type: none;   
+    margin-bottom: 30px;   
+    color: v.$Dark-Grayish-Blue;
+    @include mixins.desktop-description-set-up(unset, unset);
+    cursor: pointer;
+}
+
+li:hover {
+    color: v.$Strong-Cyan;
+}
+
+.attribution{
+    font-size: 11px;
+    text-align: center; 
+    margin-bottom: 10px;
+}
+.attribution a{
+    color: hsl(228, 45%, 44%);
+}

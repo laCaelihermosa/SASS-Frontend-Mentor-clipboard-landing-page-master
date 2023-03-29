@@ -1,0 +1,176 @@
+@use 'vars' as v;
+@use 'initSetup';
+@use 'mixins';
+@use 'footer';
+
+.main {
+    width: 375px;   
+    margin: 0 auto;
+    @include mixins.img-desktop-view(100%);
+}
+
+.h {
+    background: url(../images/bg-header-mobile.png) no-repeat;    
+    padding: 77px 30px 0;        
+    
+    &__logo {
+        display: block;
+        margin: auto;
+        margin-bottom: 70px; 
+        @include mixins.hover;              
+    }
+
+    &__title {        
+        @include mixins.description-set-up(600, 1.7em, v.$Dark-Grayish-Blue);
+        margin-bottom: 25px;        
+        @include mixins.desktop-view(unset, unset, 2.5em);
+        line-height: 40px;
+    }
+    
+    &__description {
+        @include mixins.description-set-up(500, 0.91em, v.$Grayish-Blue);
+        margin-bottom: 50px;
+        @include mixins.desktop-view(730px, unset, 1.15em);           
+    }
+    
+    &__description--lighted {             
+        @include mixins.description-set-up(400, 0.91em, v.$Grayish-Blue);
+        @include mixins.desktop-view(730px, unset, 1.05em);
+        line-height: 25px;
+    }
+    
+    &__title--h2 {
+        @include mixins.description-set-up(600, 2em, v.$Dark-Grayish-Blue);    
+        line-height: 35px;
+        margin-bottom: 20px;
+    }
+}
+
+.button-container {
+    @include mixins.flex-elements-desktop-view(500px);               
+    height: 137px;
+    margin-bottom: 170px;            
+}
+
+.button--iOS {
+    @include mixins.button(v.$Strong-Cyan, v.$Strong-CyanBxSh);     
+}   
+
+.button--Mac {
+    @include mixins.button(v.$Light-Blue, v.$Light-BlueBxSh);    
+}  
+
+.button--iOS:hover,
+.button--Mac:hover {
+    @include mixins.hover;
+}
+
+.q {
+    padding: 0 30px 130px;  
+    @include mixins.desktop-view(100%, unset, unset);      
+
+    &__image {
+        width: 300px;
+        display: block;
+        margin: 0 auto 60px;
+        @include mixins.img-desktop-view(680px);
+    }
+
+    &__title--h2 {
+        @include mixins.description-set-up(600, 1.5em, v.$Dark-Grayish-Blue);
+        margin-bottom: 15px;
+        @include mixins.desktop-description-set-up(600, 1.35em);        
+    }
+
+    &__description {
+        @include mixins.description-set-up(400, 0.91em, v.$Grayish-Blue);        
+        @include mixins.desktop-view(730px, unset, 1.1em);           
+        @include mixins.desktop-description-set-up(500, 0.9em);        
+    }   
+}
+
+.a {    
+    padding: 0 30px 90px;  
+
+    &__title--h2 {
+        @include mixins.description-set-up(600, 1.5em, v.$Dark-Grayish-Blue);
+        line-height: 35px;
+        margin-bottom: 20px;
+        @include mixins.desktop-view(unset, unset, 2em);
+    }
+    
+    &__description {
+        @include mixins.description-set-up(400, 0.91em, v.$Grayish-Blue);        
+        @include mixins.desktop-view(730px, unset, 1.05em);
+    }
+
+    &__image {   
+      width: 300px;
+      display: block;
+      margin: 0 auto;            
+      @include mixins.img-desktop-view(1000px); 
+    }
+}
+
+.s {
+    padding: 0 30px 50px; 
+    
+    &__title--h2{
+        @include mixins.description-set-up(600, 1.6em, v.$Dark-Grayish-Blue);
+        line-height: 35px;
+        margin-bottom: 15px;
+    }
+  
+    &__title--h4 {
+        @extend .a__title--h2;        
+    }
+    
+    &__description {
+        @extend .a__description;
+        margin-bottom: 90px;
+    }
+    
+    &__icons {
+        display: block;
+        margin: 0 auto 35px;            
+    }
+
+    .listsheet {
+        height: 32px;
+    }
+    
+    &__container {
+        @include mixins.flex-elements-desktop-view(500px);         
+        @include mixins.columns;
+    }
+
+    
+}
+
+
+.Co {
+   display: grid;
+   grid-template-columns: auto;
+   justify-content: center;
+   align-items: center;  
+   @include mixins.flex-elements-desktop-view(1100px);   
+
+   &__logo {    
+    margin: 0 auto 60px; 
+   }
+
+}
+
+.c {
+    padding: 77px 30px 0;       
+
+    &__title--h2{
+        @extend .a__title--h2; 
+    }
+
+    &__description {
+        @extend .a__description;     
+    }
+}
+
+
